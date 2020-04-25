@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Mech Commander 2 HD</title>
+    <link>http://example.com/blog/</link>
+    <description>Recent content in Blog on Mech Commander 2 HD</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="http://example.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Day 83 &#43; image of the day</title>
+      <link>http://example.com/blog/day83/</link>
+      <pubDate>Sun, 12 Mar 2017 01:00:09 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day83/</guid>
+      <description>!!!!!yay found and fixed bug.. no 2 bugs at once! one was causing other in a very weird way.
+When we have mech with blown hand(s) in engine it is implemented as mech without handes + mech with only left hand (no body) and right hand (also no body)
+The thing is that once we do not have body updateGeomery was not called and texture handle for hand(s) was not updated, but in render function it was updated.</description>
+    </item>
+    
+    <item>
+      <title>Day 82</title>
+      <link>http://example.com/blog/day82/</link>
+      <pubDate>Fri, 10 Mar 2017 01:23:05 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day82/</guid>
+      <description>see day81</description>
+    </item>
+    
+    <item>
+      <title>Day 81</title>
+      <link>http://example.com/blog/day81/</link>
+      <pubDate>Thu, 09 Mar 2017 01:20:39 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day81/</guid>
+      <description>see day80 looks like I found all of them (I mean it just seems to kinda work&amp;hellip;)</description>
+    </item>
+    
+    <item>
+      <title>Day 80</title>
+      <link>http://example.com/blog/day80/</link>
+      <pubDate>Wed, 08 Mar 2017 00:01:53 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day80/</guid>
+      <description>see day79 :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 79</title>
+      <link>http://example.com/blog/day79/</link>
+      <pubDate>Wed, 08 Mar 2017 00:01:34 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day79/</guid>
+      <description>trying to find (and then fix :-) ) problem with quick save/load when repair track does not want to heal characters, assume something related to uninitialized variables/32&amp;lt;-&amp;gt;64 bit support. exploiting valgrind</description>
+    </item>
+    
+    <item>
+      <title>Day 78</title>
+      <link>http://example.com/blog/day78/</link>
+      <pubDate>Mon, 06 Mar 2017 00:51:35 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day78/</guid>
+      <description>Looks like I finally found what was causing areaTriggerAdd crash, - ABL did not realy work with 64bit.
+Now it does, I hope :-)
+Though, found whole bunch of 32&amp;lt;-&amp;gt;64 bit problems in warrior.h, some mechs would not go far, esp. repair truck, then, some stats were weird in info (i) screen. Found out that some data types were int[] but memcpy was done with sizef(long) :-/ I thought, I was attentive when changed those arrays to int.</description>
+    </item>
+    
+    <item>
+      <title>Day 77</title>
+      <link>http://example.com/blog/day77/</link>
+      <pubDate>Sun, 05 Mar 2017 00:47:47 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day77/</guid>
+      <description>played with valgrind, fixed some memory leaks.
+also, finally, added refereces to fonts, so that we do not load new font every time it is needed, but use loaded if present
+found bug in ABL scripting - related to 64 bit, well yes not a bug just some work has to be done to fully support 64 bit, do not even understand how I passed 11 missions with broken ABL!</description>
+    </item>
+    
+    <item>
+      <title>Day 76</title>
+      <link>http://example.com/blog/day76/</link>
+      <pubDate>Sun, 05 Mar 2017 00:46:28 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day76/</guid>
+      <description>played with callgrind, nice stuff, fixed small cache issue (moved 2 lines of code :-))</description>
+    </item>
+    
+    <item>
+      <title>Day 75</title>
+      <link>http://example.com/blog/day75/</link>
+      <pubDate>Sun, 26 Feb 2017 23:27:28 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day75/</guid>
+      <description>checked game code with clang analyzer. also code compiles with clang-5.0
+unfortunately, analyzer is not that good as I thought&amp;hellip; or maybe I ned to add more options?
+still did not test fullscreen more even though it is checked in along with all other window changes
+clang found bug where pointer was used to compare with numbers though it should be dereferenced
+game still can occasionally crash in release mode (maybe in debug as well, but I am playing in release), though I cannot look for a bug which cannot be reproduced.</description>
+    </item>
+    
+    <item>
+      <title>Day 74</title>
+      <link>http://example.com/blog/day74/</link>
+      <pubDate>Sun, 26 Feb 2017 23:26:05 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day74/</guid>
+      <description>merged Windows changes, so Linux can compile too
+fixed nasty array-out-of-bounds bug, see genactor.cpp</description>
+    </item>
+    
+    <item>
+      <title>Day 73</title>
+      <link>http://example.com/blog/day73/</link>
+      <pubDate>Sun, 19 Feb 2017 23:21:20 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day73/</guid>
+      <description>actually played the game :-)
+have release configuration running (and looks like it is even working)
+&amp;ldquo;bad&amp;rdquo; wav music converted with sox, now good :-)
+mech modification does not work - have to investigate this.
+now sleep
+bye!
+.</description>
+    </item>
+    
+    <item>
+      <title>Day 72</title>
+      <link>http://example.com/blog/day72/</link>
+      <pubDate>Sat, 18 Feb 2017 23:45:12 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day72/</guid>
+      <description>tried to run with .fst files - no animation in encyclopedia (
+re-fixed isuues with incorrect light matrix (3rd time, this time hope it is final)
+did some Makefile changes, started to tinkering with Debug/Release configurations
+also realized that not all wav files were loaded correctly!</description>
+    </item>
+    
+    <item>
+      <title>Day 71</title>
+      <link>http://example.com/blog/day71/</link>
+      <pubDate>Fri, 17 Feb 2017 00:43:59 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day71/</guid>
+      <description>added ability to save/load case sensitive savegames also figured out problem with fullcreen mode (at least on Windows, wil see if it work on Linux as well)</description>
+    </item>
+    
+    <item>
+      <title>Day 70</title>
+      <link>http://example.com/blog/day70/</link>
+      <pubDate>Thu, 16 Feb 2017 01:10:04 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day70/</guid>
+      <description>fixed BMP loading (new SDL_ttf created different bmps, where pixel data was not directly following header end, so have to look at special header field to find pixel data start)
+some changes to font rendering
+looks like fonts rendered correctly now
+some mouse related fixes including wheel (zoom in/out)</description>
+    </item>
+    
+    <item>
+      <title>Day 69</title>
+      <link>http://example.com/blog/day69/</link>
+      <pubDate>Mon, 13 Feb 2017 01:14:25 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day69/</guid>
+      <description>added some input changes (mostly bad hardcode, but should work for our small needs)
+added function to get game user data directory (want to use it for saves and other data which games wants to create)
+I am afraind 100 days wil not be enough to make 1.0 version of linux port, but we&amp;rsquo;ll see
+oh!.. and just fixed text length calculation function :-)
+ok go to sleep now</description>
+    </item>
+    
+    <item>
+      <title>Day 68</title>
+      <link>http://example.com/blog/day68/</link>
+      <pubDate>Mon, 13 Feb 2017 00:38:43 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day68/</guid>
+      <description>submitted resolution change code
+fixed mouse movement (yeah, I noticed that mouse which was laying all this time nearby and actully plugged it in to see that it works poorly :-), so I fixed it, I hope :-))
+also added one more fix to &amp;ldquo;broken lights&amp;rdquo; problem
+some changes to edit box (actually uncommented most of temporarily #ifdefed code)</description>
+    </item>
+    
+    <item>
+      <title>Day 67</title>
+      <link>http://example.com/blog/day67/</link>
+      <pubDate>Fri, 10 Feb 2017 00:39:51 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day67/</guid>
+      <description>updated SDL to see if fullscreen bug will go away, sadly no.
+updated MakeLists.txt to search for SDL package instead of SDL library, also added non standard path as first path to search for to use my updated SDL lib instead of a system one.</description>
+    </item>
+    
+    <item>
+      <title>Day 66 &#43; image of the day</title>
+      <link>http://example.com/blog/day66/</link>
+      <pubDate>Sat, 28 Jan 2017 23:39:51 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day66/</guid>
+      <description>rewrote a bit how resolutions are changed, so that all supported resolutions can be selected, though not all UI may work correctly
+Image of the day:</description>
+    </item>
+    
+    <item>
+      <title>Day 65</title>
+      <link>http://example.com/blog/day65/</link>
+      <pubDate>Sun, 22 Jan 2017 00:41:11 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day65/</guid>
+      <description>submitted long lasting unsubmitted files with recent changes.
+added GUI selection of resolution and destroying of created render resources</description>
+    </item>
+    
+    <item>
+      <title>Day 64</title>
+      <link>http://example.com/blog/day64/</link>
+      <pubDate>Thu, 19 Jan 2017 00:57:42 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day64/</guid>
+      <description>played with valgrind after running first windows port of linux port of mc2 :-) and saw that there are quite a few memory corruptions.
+fixed them in Windows version, but also wanted to see if valgrind will find them (it did), even though program never crashed, unlike in Windows version.</description>
+    </item>
+    
+    <item>
+      <title>Day 63</title>
+      <link>http://example.com/blog/day63/</link>
+      <pubDate>Thu, 12 Jan 2017 00:54:28 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day63/</guid>
+      <description>well, spent too much time trying to make text align correctly, fxed some small text related bugs at the same time
+it all could be done faster&amp;hellip;
+especially taking into account that vertical alignment is not done anyway :-)
+ah probably because I am ill.
+Hope, I&amp;rsquo;ll feel better tomorrow.
+Bye!
+.</description>
+    </item>
+    
+    <item>
+      <title>Day 62</title>
+      <link>http://example.com/blog/day62/</link>
+      <pubDate>Mon, 09 Jan 2017 23:54:25 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day62/</guid>
+      <description>not much time spent.. changed 2 lines, but at least now craters do not flicker
+they do not write to depth now as well as terrain overlay and shadows</description>
+    </item>
+    
+    <item>
+      <title>Day 61</title>
+      <link>http://example.com/blog/day61/</link>
+      <pubDate>Thu, 05 Jan 2017 00:50:47 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day61/</guid>
+      <description>Added alpha test render state support, which fixed trees and other alpha test objects. Also seems to fixed windows disappearing under some angles (like ones in Hangar)</description>
+    </item>
+    
+    <item>
+      <title>Day 60</title>
+      <link>http://example.com/blog/day60/</link>
+      <pubDate>Sat, 31 Dec 2016 00:07:24 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day60/</guid>
+      <description>Wow, found out a bit more detail about how rendering is done in MC2.
+In tgl.cpp there is usually Update and Render methods. So Update updates and transforms shapes AND at the same time allocates triangles in masterTextureNodes accordingly. And if there should not be any texture then nodeId == 0xffffffff.
+Later in Render method, necessary vertices are added. Somehow, those methods should be in sync, so that we add exactly same amount of triangles that were allocated in Update method.</description>
+    </item>
+    
+    <item>
+      <title>Day 59</title>
+      <link>http://example.com/blog/day59/</link>
+      <pubDate>Sat, 24 Dec 2016 22:01:57 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day59/</guid>
+      <description>Added support for resolution change (not in GUI options), but actual resolution change by a game, now I at least can see something and not look at the game through pinhole camera :-)
+still have to add suport for modes enumeration to make GUI options functional</description>
+    </item>
+    
+    <item>
+      <title>Day 58</title>
+      <link>http://example.com/blog/day58/</link>
+      <pubDate>Fri, 23 Dec 2016 23:45:16 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day58/</guid>
+      <description>fiddling with different texture blend render states and checking that everything works, I hope it does :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 57</title>
+      <link>http://example.com/blog/day57/</link>
+      <pubDate>Thu, 22 Dec 2016 01:13:29 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day57/</guid>
+      <description>fixed ugly lines between terrain chunks - was related to incorrect UVs calculation
+hey, we are closer and closer to something that actually does not look like complete shit! :-)
+bye
+go to sleep now!</description>
+    </item>
+    
+    <item>
+      <title>Day 56</title>
+      <link>http://example.com/blog/day56/</link>
+      <pubDate>Thu, 22 Dec 2016 01:12:20 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day56/</guid>
+      <description>small stuff, fxed some warnings, but also fixed annoying black tiles in terrain, that was weird&amp;hellip; for some reason texture is drawn with alpha blend and it has zero alpha, but in fact it should not be drawn with alpha test in first place. Well, there is type passed (gos_Texture_Solid) when it is created, but.. well, it has alpha channel and was drawn with blending so, why should I set alpha channel to 0xFF manualy?</description>
+    </item>
+    
+    <item>
+      <title>Day 55</title>
+      <link>http://example.com/blog/day55/</link>
+      <pubDate>Sat, 17 Dec 2016 00:57:03 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day55/</guid>
+      <description>fixed issue with salvage airplane not being drawn.
+Apparently, it is same old issue when I changed signature of virtual function in base class and forgot to change it in one of the derived classes&amp;hellip;.
+in this particular case it was getting node position by name in model. I changed it to const char* instead of just char* in one of the first changes to the code (even before I added code to git)</description>
+    </item>
+    
+    <item>
+      <title>Day 54</title>
+      <link>http://example.com/blog/day54/</link>
+      <pubDate>Fri, 16 Dec 2016 00:23:26 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day54/</guid>
+      <description>After a long beak
+submitted some pending code
+was playing with my VS Code plugins (Cmake Tools, etc&amp;hellip;), as a result found one buffer owerwrite issue in warrior.cpp SkillsTable thanks to clang
+trying to figure out why salvage airplane is not visible&amp;hellip; in progress
+time to sleep</description>
+    </item>
+    
+    <item>
+      <title>Day 53 &#43; image of the day</title>
+      <link>http://example.com/blog/day53/</link>
+      <pubDate>Thu, 01 Dec 2016 14:51:13 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day53/</guid>
+      <description>fixed a problem with texture that had id = 0 not being applied :-) it was a font texture (used at least for in-game text), so some text was not visible due to this reason
+Image of the day:</description>
+    </item>
+    
+    <item>
+      <title>Day 51</title>
+      <link>http://example.com/blog/day51/</link>
+      <pubDate>Tue, 29 Nov 2016 00:40:51 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day51/</guid>
+      <description>was changing long to int32_t in ABL related files&amp;hellip; well externs are evil! consider:
+1.cpp
+int myVar; 2.cpp
+extern long myVar; good luck looking for a bug&amp;hellip;
+ABL uses lots of them!!!
+even if you think you&amp;rsquo;ve correclty changed all longs to ints, there is such code as:
+long my_stack_var; memcpy(myVar, my_stack_var, sizeof(long)); // well this you may catch by searching for &amp;quot;long&amp;quot; // but consider this memcpy(myVar, my_stack_var, sizeof(my_stack_var));// :O I hope I did not leave such cases&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>Day 52</title>
+      <link>http://example.com/blog/day52/</link>
+      <pubDate>Tue, 29 Nov 2016 00:40:03 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day52/</guid>
+      <description>fixed memory leak in gosAudio_CreateResource
+in training mission 5 &amp;quot;terminationResult&amp;quot; variable was screwed (see mission.cpp 667 - 676 lines)
+apparently guys had a strange sense of humor and added playing of win/lose tunes if terminationResult was not as one might expect to find out ABL issues, and apparently training mission 5 has them.
+I do not know if it had them before, or they we caused by my recent changes in abl code (long-&amp;gt;int), I hope not.</description>
+    </item>
+    
+    <item>
+      <title>Day 50</title>
+      <link>http://example.com/blog/day50/</link>
+      <pubDate>Sat, 26 Nov 2016 00:17:16 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day50/</guid>
+      <description>finished initial draft sound implementation, there are some wav files which cannot be loaded neither by SDL nor by SDL_mixer, also noise sounds that repacked have to be extracted.
+made couple of small fixes like avoiding triggering assert() when dividing by a very small number, happened because currently frame time is faked by me as 16msec :-), and others
+even finished E3 mission :-) from .. maybe 10th try, because of anoying asserts and PAUSE()/STOP() triggerings.</description>
+    </item>
+    
+    <item>
+      <title>Day 49</title>
+      <link>http://example.com/blog/day49/</link>
+      <pubDate>Fri, 25 Nov 2016 01:11:15 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day49/</guid>
+      <description>proceeded with sound, almost can play game with all sounds available, though still lack a lot of sound support stuff and resource loading could be smarter.</description>
+    </item>
+    
+    <item>
+      <title>Day 48</title>
+      <link>http://example.com/blog/day48/</link>
+      <pubDate>Wed, 23 Nov 2016 01:02:58 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day48/</guid>
+      <description>started to add sound support. looks like signed to unsinged conversion fails to work but mono/stereo and frequency conversion works, hmmm
+no screenshots in near future, I expect :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 47</title>
+      <link>http://example.com/blog/day47/</link>
+      <pubDate>Sat, 19 Nov 2016 01:02:15 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day47/</guid>
+      <description>added conversion between rgba -&amp;gt; bgra -&amp;gt; rgba when locking and unlocking, because CPU code expects textures in BGRA, so I have correct colors now
+also fixed very interesting issue.
+fors code was like this:
+unsigned long s_textureHandle[] = {-1, -1, -1, -1}; clang was complaining that there is conversion or something like this, so I changed this to:
+unsigned long s_textureHandle[] = {-1u, -1u, -1u, -1u}; and then today I&amp;rsquo;ve got a crash because of this conditional:</description>
+    </item>
+    
+    <item>
+      <title>Day 46</title>
+      <link>http://example.com/blog/day46/</link>
+      <pubDate>Sat, 19 Nov 2016 00:55:34 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day46/</guid>
+      <description>trying to figure out why some textures do not have nice blue background&amp;hellip;. :-/ like ones in solo mission on single player option map.
+but in-game minimap has this nice background and windows version also has it</description>
+    </item>
+    
+    <item>
+      <title>Day 45 &#43; image of the day</title>
+      <link>http://example.com/blog/day45/</link>
+      <pubDate>Mon, 14 Nov 2016 01:50:25 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day45/</guid>
+      <description>implemented proper (well.. I mean, it works sometimes) texutre lock/unlock
+figured out why mouse cursor is not drawn sometimes (mc2 mouse is processed in a separate thread. Something like this variable was set or not set depending on some strange reasons)
+we shoulld always assume it is not in a separate thread and that is it!
+spent whole evening tracking strange issue when mechs would not go where I told them&amp;hellip; but would do it if I said to shoot, apparently I had 2 errors in timeGetTime()</description>
+    </item>
+    
+    <item>
+      <title>Day 44 &#43; image of the day</title>
+      <link>http://example.com/blog/day44/</link>
+      <pubDate>Sat, 12 Nov 2016 23:53:43 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day44/</guid>
+      <description>continue with various fixes.
+one that was quite scary is memery block filling with NANs. when first memory was cast to long* but number of iterations was divided only by 4, ..who cares about 64bit long in 2001
+finally I can play a game now! though mech would not move where I tell them, only start moving and then stop again. It is interesting, that they move if they need to come closer to shoot (when I aim cursor at the target and click)</description>
+    </item>
+    
+    <item>
+      <title>Day 43 &#43; image of the day</title>
+      <link>http://example.com/blog/day43/</link>
+      <pubDate>Sat, 12 Nov 2016 02:04:48 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day43/</guid>
+      <description>more long to int and clang warning fixes
+there are some jems here like (see below)
+chaged texture creation code (hopefully it is also faster now)
+DecodeJPG - is not implemented? do we need this? Can&amp;rsquo;t we just use TGA???
+int a[5]; //... if(a) do stuff or
+UNSIGNED long currentPacket = numPackets; while (--currentPacket &amp;gt;= 0) { //do stuff } no parenthesis, what should I think there? is it intended or should I put () around || and change it?</description>
+    </item>
+    
+    <item>
+      <title>Day 42</title>
+      <link>http://example.com/blog/day42/</link>
+      <pubDate>Thu, 10 Nov 2016 01:51:10 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day42/</guid>
+      <description>continue with long -&amp;gt; int changes and also remove all pointers from structs which are save/loaded as binary data because pointers can have different sizes</description>
+    </item>
+    
+    <item>
+      <title>Day 41</title>
+      <link>http://example.com/blog/day41/</link>
+      <pubDate>Thu, 10 Nov 2016 01:50:29 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day41/</guid>
+      <description>long -&amp;gt; int kind of fixes because binary data will not load</description>
+    </item>
+    
+    <item>
+      <title>Day 40 &#43; image of the day</title>
+      <link>http://example.com/blog/day40/</link>
+      <pubDate>Mon, 07 Nov 2016 00:43:04 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day40/</guid>
+      <description>continue to get real game (and not only menu, though I got to other menus :-)) running.
+implemented (coarsely and file times are not correct yet) FindFirstFile and friends
+some fixes in a Heap class (mainly VirtualFree)
+other fixes here and there.
+oh, and yesterday I did some function parameter changes from char* to const char* and as a result got bitten by it, because suddenly if there were derived classes and that function was virtual then it was not an override anymore :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 39 &#43; image of the day</title>
+      <link>http://example.com/blog/day39/</link>
+      <pubDate>Sun, 06 Nov 2016 00:58:45 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day39/</guid>
+      <description>It has finally happened! today I&amp;rsquo;ve seen first ran of mc2 on Linux! I can see intro and main menu and even exit game :-)
+pretty much all other options just crash the game ))
+still, a lot of work has been done and much is left to do.
+I like clang compiler for its messages, already fixed several potential code issues (which, by the way, were in a shipped product!</description>
+    </item>
+    
+    <item>
+      <title>Day 38</title>
+      <link>http://example.com/blog/day38/</link>
+      <pubDate>Fri, 04 Nov 2016 01:02:05 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day38/</guid>
+      <description>continue to port /code folder</description>
+    </item>
+    
+    <item>
+      <title>Day 37</title>
+      <link>http://example.com/blog/day37/</link>
+      <pubDate>Fri, 04 Nov 2016 01:01:51 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day37/</guid>
+      <description>started to port /code folder</description>
+    </item>
+    
+    <item>
+      <title>Day 35 &#43; image of the day</title>
+      <link>http://example.com/blog/day35/</link>
+      <pubDate>Fri, 04 Nov 2016 01:01:37 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day35/</guid>
+      <description>some small stuff here and there
+also tried to use FinalBuild/data folder and .fst files
+(.fst files are packages (internal file system))
+but seems that some of them are compressed and my zlib decompress returned Z_BAD_DATA error on them :-/
+probably have to run modified windows version and decompress+dump all files :-) because in &amp;quot;source&amp;quot; /data folder not all of them are present (at least that is what I think)</description>
+    </item>
+    
+    <item>
+      <title>Day 36</title>
+      <link>http://example.com/blog/day36/</link>
+      <pubDate>Tue, 01 Nov 2016 02:19:23 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day36/</guid>
+      <description>unpacked and dumped data from .fst files on Windows using game original compression/decompression routines, because they had some strange compression that I could not decompress on linux
+some minor fixes
+basic support for render vertex array, we can see mechs now! yay!
+spend hell lot of time by forgetting to reset glDepthMask to GL_TRUE before clearing buffer :-/
+shutdown
+go to sleep
+it is 2:18 AM
+will submit code tomorrow</description>
+    </item>
+    
+    <item>
+      <title>Day 34 &#43; image of the day</title>
+      <link>http://example.com/blog/day34/</link>
+      <pubDate>Sat, 29 Oct 2016 12:58:00 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day34/</guid>
+      <description>added font color support
+got some nice fonts, which does not look like s**t. (Mecha@16pt, emulogic@8pt), have to remember those, to not redistribute them acidentally without following authors requirements
+Image of the day:</description>
+    </item>
+    
+    <item>
+      <title>Day 33 &#43; image of the day</title>
+      <link>http://example.com/blog/day33/</link>
+      <pubDate>Sat, 29 Oct 2016 01:05:17 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day33/</guid>
+      <description>more run-time text fixes, some client code fixes (numlines identification game code was just broken, it worked just because gos_GetStringLength were taking into account region)
+added word wrap for rendering
+big todo: rewrite this client code: aFont::height
+Image of the day:</description>
+    </item>
+    
+    <item>
+      <title>Day 32 &#43; image of the day</title>
+      <link>http://example.com/blog/day32/</link>
+      <pubDate>Fri, 28 Oct 2016 01:32:08 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day32/</guid>
+      <description>added VERY SIMPLE AND UGLY (tm) text rendering.. and it is also slow and incorrect, but hey! you can see text!
+also fixed memeory corruption, phew&amp;hellip;.
+need to think about resource resuage, same textures/fonts are loaded several times alsways creating new resource, this is not good!
+Image of the day:</description>
+    </item>
+    
+    <item>
+      <title>Day 31</title>
+      <link>http://example.com/blog/day31/</link>
+      <pubDate>Thu, 27 Oct 2016 00:50:51 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day31/</guid>
+      <description>bunch of text_tool fixes, nothing interesting :-/ :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 30</title>
+      <link>http://example.com/blog/day30/</link>
+      <pubDate>Tue, 25 Oct 2016 00:51:41 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day30/</guid>
+      <description>continued with tex_tool and runtime for font support</description>
+    </item>
+    
+    <item>
+      <title>Day 29</title>
+      <link>http://example.com/blog/day29/</link>
+      <pubDate>Mon, 24 Oct 2016 00:01:13 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day29/</guid>
+      <description>nothing fancy just implemented simple text utility, it creates text texture along with some glyph info from .ttf files. I am using SDL_ttf library for this</description>
+    </item>
+    
+    <item>
+      <title>Day 28</title>
+      <link>http://example.com/blog/day28/</link>
+      <pubDate>Sat, 22 Oct 2016 22:54:20 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day28/</guid>
+      <description>started to create basic font creation utility, because I need to get text working and do not know format of d3f fonts used in MC2.</description>
+    </item>
+    
+    <item>
+      <title>Day 27 &#43; image of the day</title>
+      <link>http://example.com/blog/day27/</link>
+      <pubDate>Tue, 18 Oct 2016 00:31:52 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day27/</guid>
+      <description>Added very basic texture support, now I see some textures,&amp;hellip; and have some crash on exit which I need to investigate now :-), I mean later&amp;hellip; :-)
+Image of the day:</description>
+    </item>
+    
+    <item>
+      <title>Day 26 &#43; image of the day</title>
+      <link>http://example.com/blog/day26/</link>
+      <pubDate>Sat, 15 Oct 2016 01:26:30 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day26/</guid>
+      <description>got first something on a screen! (see screenshot!)
+basically added quads/lines/points/tris drawing (no textures yet, though) and some render states support (blending, depth test/write etc&amp;hellip;)
+and also wrote first shader
+Image of the day:</description>
+    </item>
+    
+    <item>
+      <title>Day 24</title>
+      <link>http://example.com/blog/day24/</link>
+      <pubDate>Fri, 14 Oct 2016 00:41:31 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day24/</guid>
+      <description>many small fixes (random, current heap pointer, etc..) mainly due to not implemented error reporting )), so I can see what was wrong before :-)
+now it seems that we do not have any obvious errors, so I split some render related functions to a separate file and added some stub-like implementation for text rendering and so on</description>
+    </item>
+    
+    <item>
+      <title>Day 25</title>
+      <link>http://example.com/blog/day25/</link>
+      <pubDate>Fri, 14 Oct 2016 00:41:10 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day25/</guid>
+      <description>added minimum code to draw quad just to be sure that whole chain is setup correctly, now I have a quad on a screen :-)
+still it is not drawn by mc2, but rather by my own code moved from my previous projects, but more to come!</description>
+    </item>
+    
+    <item>
+      <title>Day 23</title>
+      <link>http://example.com/blog/day23/</link>
+      <pubDate>Sat, 08 Oct 2016 01:39:15 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day23/</guid>
+      <description>paths / flenames/ _splitpath fix / path separators &amp;hellip;
+texture loading / storing
+binary shape save / load checked that works, was problem when creating write-only file =&amp;gt; cannot read it :-) , apparently on windows all files can be read if there is write permission</description>
+    </item>
+    
+    <item>
+      <title>Day 21</title>
+      <link>http://example.com/blog/day21/</link>
+      <pubDate>Sun, 02 Oct 2016 23:18:01 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day21/</guid>
+      <description>did some file io implementation more long -&amp;gt; int conversions
+still some problems left with TGL num shapes, and binary tgl files written incorrectly!</description>
+    </item>
+    
+    <item>
+      <title>Day 20</title>
+      <link>http://example.com/blog/day20/</link>
+      <pubDate>Sun, 02 Oct 2016 00:04:15 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day20/</guid>
+      <description>changed res_conv script to preserve IDs because some IDs are stored inside data files
+also created dll which acts as resource dll (similar to Windows)
+now, when I have all correct IDs, a lot of other code started to execute :-) this means new bugs :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 19</title>
+      <link>http://example.com/blog/day19/</link>
+      <pubDate>Sun, 02 Oct 2016 00:02:30 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day19/</guid>
+      <description>added res_conv script to convert all string recources</description>
+    </item>
+    
+    <item>
+      <title>Day 18</title>
+      <link>http://example.com/blog/day18/</link>
+      <pubDate>Thu, 29 Sep 2016 23:48:31 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day18/</guid>
+      <description>added initialization/destroy for window and opengl graphics context
+really need to get those string resources and get rid of stubs because this breaks app logic it relies on string names for comparison etc&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Day 17</title>
+      <link>http://example.com/blog/day17/</link>
+      <pubDate>Sun, 25 Sep 2016 23:26:25 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day17/</guid>
+      <description>added some stub mplementation for Texture function set Environment.InitializeGameEngine() passes without crashes!!! :-)
+DoGameLogic and UpdateRenderers also do not crash, time to implement some drawing! :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 16</title>
+      <link>http://example.com/blog/day16/</link>
+      <pubDate>Sun, 25 Sep 2016 01:11:20 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day16/</guid>
+      <description>Continud with long -&amp;gt; int conversions. Packet.cpp/h converted. found nice checksume function there,
+int PacketFile::checkSumFile (void) { // ... int sum = 0; MemoryPtr curFileByte = fileMap; for (unsigned int i=4;i&amp;lt;fileSize();i++,curFileByte++) { sum += *curFileByte; } return sum; } and interesting random tmp file name :-)
+PacketFile tmpFile; result = tmpFile.create(&amp;quot;AF3456AF.788&amp;quot;); if (packet &amp;gt;= numPackets) { numPackets++; } still in InitializeEngine function</description>
+    </item>
+    
+    <item>
+      <title>Day 15</title>
+      <link>http://example.com/blog/day15/</link>
+      <pubDate>Thu, 22 Sep 2016 00:46:50 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day15/</guid>
+      <description>implemented simple zlib compression/decompression
+textures are still not handled correctly, well nothing is implemented, but cursor initialization code at least does not crash :-)
+still have to implement at least stubs for texture lock, and create_texture functions
+File::readLong is not what it should do, because long at tht time was 4 bytes!
+how many of those still left&amp;hellip;. :-/</description>
+    </item>
+    
+    <item>
+      <title>Day 14</title>
+      <link>http://example.com/blog/day14/</link>
+      <pubDate>Wed, 21 Sep 2016 00:49:08 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day14/</guid>
+      <description>implemented VirtualAlloc / VirtualFree with mmap/mprotect
+changed data/art/* to lower case
+and also changed system.cfg paths to Unix type paths</description>
+    </item>
+    
+    <item>
+      <title>Day 13</title>
+      <link>http://example.com/blog/day13/</link>
+      <pubDate>Wed, 21 Sep 2016 00:14:35 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day13/</guid>
+      <description>continued to debug long vs. int DWORD typedef
+figured out that mov %var, %esp is the way to get this pointer, because of thiscall convention, thank you gdb
+changed database.cpp and some other files to correspond to new DWORD size
+uncommented stuff in heap</description>
+    </item>
+    
+    <item>
+      <title>Day 12</title>
+      <link>http://example.com/blog/day12/</link>
+      <pubDate>Mon, 19 Sep 2016 21:35:32 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day12/</guid>
+      <description>added _ARMOR define
+was struc by:
+ typedef unsigned long DWORD which is by the way 8 bytes! on 64bit changed to unsigned int in order to be 32bit  fixing code&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Day 11</title>
+      <link>http://example.com/blog/day11/</link>
+      <pubDate>Sat, 17 Sep 2016 23:44:38 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day11/</guid>
+      <description>continue stepping inside engine initialize function and Viewer path conversions \ -&amp;gt; /
+type width problems
+size_t stringLength;
+problem if 64bit, because saved data used 32bit probram where size_t is 4bytes
+size_t:
+ mlrlightmap.cpp auto_container.hpp 60:marray.hpp 58:filestreammanager.cpp matrixstack.hpp mstring.hpp  </description>
+    </item>
+    
+    <item>
+      <title>Day 10</title>
+      <link>http://example.com/blog/day10/</link>
+      <pubDate>Sat, 17 Sep 2016 02:00:13 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day10/</guid>
+      <description>continue to fill main() function and run Viewer
+implemented gos_CreateMemroyHeap and friends
+caveat: _open() calls File::open(const char* bufer, int length) instead of system open because
+ #define _open open
+should be
+ #define _open ::open
+or even better
+ #define _open my_super_open
+and then
+FILE* my_super_open(...) { ... } caveat2: code uses long and assumes that it is 4 bytes :-(</description>
+    </item>
+    
+    <item>
+      <title>Day 9</title>
+      <link>http://example.com/blog/day9/</link>
+      <pubDate>Sat, 17 Sep 2016 00:23:46 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day9/</guid>
+      <description>wrote some scripts to extrac all IDS_ (string ids) from the code, and create mockup array, will have to extract real values from windows res file.
+added some lines to a main() function, now it is not so empty :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 8</title>
+      <link>http://example.com/blog/day8/</link>
+      <pubDate>Wed, 14 Sep 2016 22:58:53 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day8/</guid>
+      <description>finally it compiles and links without error, though main function looks like this:
+int main(void) { } :-)
+will have to fill it somehow :-)</description>
+    </item>
+    
+    <item>
+      <title>Day 7</title>
+      <link>http://example.com/blog/day7/</link>
+      <pubDate>Thu, 11 Aug 2016 23:51:29 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day7/</guid>
+      <description>OK viewer compiles though now I have to somehow implement a dozillion of functions just to get it linked.
+stubs are our friends!!!
+make 2&amp;gt;&amp;amp;1 | grep undefined | perl -pe &amp;quot; s/.+ undefined reference to \`(.*)\&#39;/\1/g &amp;quot; | sort | uniq | wc -l gave only 160 results :-) hehe :-)
+mostly sound &amp;amp; graphics, some strings stuff (but that should be easy)
+anyway I always wanted to implement a renderer here is my STAR TIME has come!</description>
+    </item>
+    
+    <item>
+      <title>Day 6</title>
+      <link>http://example.com/blog/day6/</link>
+      <pubDate>Tue, 09 Aug 2016 22:24:19 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day6/</guid>
+      <description>some forward declaration related changs (cross reference of include files, somehow it was compiling on Windows :-/)
+unsigned int fogColor; // later SetRenderState(state, (int)&amp;amp;fogColor); //what? pointer to value cast ? mlr project is built!!!! (I mean just compiled :-))</description>
+    </item>
+    
+    <item>
+      <title>Day 4</title>
+      <link>http://example.com/blog/day4/</link>
+      <pubDate>Sun, 07 Aug 2016 23:47:50 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day4/</guid>
+      <description>unicode / mbs / char mess&amp;hellip;&amp;hellip;..
+still mess, but at leas it compiles :-) not links though ))
+started to create duplicates for windows headers: windows.h / winnt.h / winuser.h / windef.h / winnls.h etc&amp;hellip;
+another folder called mclib is compiling (without subfolders though)
+using NULL instead of &#39;\0&#39;, e.g. char* aa; aa[0] = NULL</description>
+    </item>
+    
+    <item>
+      <title>Day 3</title>
+      <link>http://example.com/blog/day3/</link>
+      <pubDate>Sun, 07 Aug 2016 00:03:24 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day3/</guid>
+      <description>Fixed some more bugs
+started to create window-like headers, and implement windows functions(mostly string related) so less work will be needed to do
+MemoryPtr defined in 8 places :(
+memory heaps&amp;hellip; a lot of asm&amp;hellip; but there is an option in the code to use GameOS memeory heap, of course that one has no implementation, but I can do something to it, so switch to GameOS heap and throw away all scary ASM code</description>
+    </item>
+    
+    <item>
+      <title>Day 2</title>
+      <link>http://example.com/blog/day2/</link>
+      <pubDate>Fri, 05 Aug 2016 23:12:19 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day2/</guid>
+      <description>ok, leys start porting! yay! hm&amp;hellip; how do I even compile it&amp;hellip; lets go into directory with smalles number of files CMakeLists.txt based on .vcproj files
+cat Stuff.vcproj | grep &amp;quot;.cpp&amp;quot; | perl -pe &#39;s/.+\&amp;quot;(\w+\.cpp)\&amp;quot;.+/\1/g&#39; &amp;gt;&amp;gt; CMakeLists.txt ok, compile&amp;hellip; oh my..
+and of course nobody cared for include filename CaSEneSs,
+so small script to bring all files to lowercase
+small script to bring all include to lowercase and fix slashes</description>
+    </item>
+    
+    <item>
+      <title>Day 1</title>
+      <link>http://example.com/blog/day1/</link>
+      <pubDate>Thu, 04 Aug 2016 23:56:58 +0000</pubDate>
+      
+      <guid>http://example.com/blog/day1/</guid>
+      <description>ok, lets see if it compiles on Windows hmm..pretty well I can even play it
+ok look how things are functioning inside&amp;hellip; etc&amp;hellip; software renderer, directx8.. but no implementation available
+also no sound / networking / keyboard handling / etc&amp;hellip; code all core subsystems (including main loop) are binary linked and only header available
+big structure taking function pointer and calls them every frame, polls data from devices, does rendering etc&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

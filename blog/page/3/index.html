@@ -6,7 +6,7 @@
     
     <title>Mech Commander 2 HD  | Blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.63.1" />
+    <meta name="generator" content="Hugo 0.72.0" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -123,181 +123,266 @@
 
     <main class="pb7" role="main">
       
+
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"><p>This is pretty much a dump of what I&rsquo;ve been working on during making this port. It also contains some dev screenshots.</p>
-</section>
-    <section class="flex-ns flex-wrap justify-around mt5">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+      <p>This is pretty much a dump of what I&rsquo;ve been working on during making this port. It also contains some dev screenshots.</p>
+
+    </section>
+    
+    
+    <aside class="flex flex-column items-center justify-around mt5 ">
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        January 12, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day63/" class="link black dim">
         Day 63
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      well, spent too much time trying to make text align correctly, fxed some small text related bugs at the same time
-it all could be done faster&hellip;
-especially taking into account that vertical alignment is not done anyway :-)
-ah probably because I am ill.
-Hope, I&rsquo;ll feel better tomorrow.
-Bye!
-.
+      <p>well, spent too much time trying to make text align correctly, fxed some small text related bugs at the same time</p>
+<p>it all could be done faster&hellip;</p>
+<p>especially taking into account that vertical alignment is not done anyway :-)</p>
+<p>ah probably because I am ill.</p>
+<p>Hope, I&rsquo;ll feel better tomorrow.</p>
+<p>Bye!</p>
+<p>.</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        January 9, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day62/" class="link black dim">
         Day 62
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      not much time spent.. changed 2 lines, but at least now craters do not flicker
-they do not write to depth now as well as terrain overlay and shadows
+      <p>not much time spent.. changed 2 lines, but at least now craters do not flicker</p>
+<p>they do not write to depth now as well as terrain overlay and shadows</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        January 5, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day61/" class="link black dim">
         Day 61
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Added alpha test render state support, which fixed trees and other alpha test objects. Also seems to fixed windows disappearing under some angles (like ones in Hangar)
+      <p>Added alpha test render state support, which fixed trees and other alpha test objects. Also seems to fixed windows disappearing under some angles (like ones in Hangar)</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        December 31, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day60/" class="link black dim">
         Day 60
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Wow, found out a bit more detail about how rendering is done in MC2.
-In tgl.cpp there is usually Update and Render methods. So Update updates and transforms shapes AND at the same time allocates triangles in masterTextureNodes accordingly. And if there should not be any texture then nodeId == 0xffffffff.
-Later in Render method, necessary vertices are added. Somehow, those methods should be in sync, so that we add exactly same amount of triangles that were allocated in Update method.
+      <p>Wow, found out a bit more detail about how rendering is done in MC2.</p>
+<p>In <code>tgl.cpp</code> there is usually <code>Update</code> and <code>Render</code> methods. So <code>Update</code> updates and transforms shapes AND at the same time allocates triangles in <code>masterTextureNodes</code> accordingly.
+And if there should not be any texture then <code>nodeId == 0xffffffff</code>.</p>
+<p>Later in <code>Render</code> method, necessary vertices are added. Somehow, those methods should be in sync, so that we add exactly same amount of triangles that were allocated in <code>Update</code> method.</p>
+<p>In a same way, <code>nodeId == 0xffffffff</code> if no texture should be used, also in this case <code>masterTextureNodes[0]</code> is used to store triangles info.</p>
+<p>Found all that when trying to figure out why windows sometimes become transparent and sometimes not. So have to make sure that texture handle 0 means no texture and just add fake texture when renderer is initialized, so that no valid texture wil have handle 0. Also have to figure out, what does it mean when terrain is drawn with texture handle 0, should those triangles be drawn or can we just skip them (apparently skipping them seems to be ok, but have to make a thorough check).</p>
+<p>And finally - even if I&rsquo;ve found a problem with windows, it is still a question why they are drawn only in some cases and in other cases, they are not drawn.</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        December 24, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day59/" class="link black dim">
         Day 59
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Added support for resolution change (not in GUI options), but actual resolution change by a game, now I at least can see something and not look at the game through pinhole camera :-)
-still have to add suport for modes enumeration to make GUI options functional
+      <p>Added support for resolution change (not in GUI options), but actual resolution change by a game, now I at least can see something and not look at the game through pinhole camera :-)</p>
+<p>still have to add suport for modes enumeration to make GUI options functional</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        December 23, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day58/" class="link black dim">
         Day 58
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      fiddling with different texture blend render states and checking that everything works, I hope it does :-)
+      <p>fiddling with different texture blend render states and checking that everything works, I hope it does :-)</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        December 22, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day57/" class="link black dim">
         Day 57
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      fixed ugly lines between terrain chunks - was related to incorrect UVs calculation
-hey, we are closer and closer to something that actually does not look like complete shit! :-)
-bye
-go to sleep now!
+      <p>fixed ugly lines between terrain chunks - was related to incorrect UVs calculation</p>
+<p>hey, we are closer and closer to something that actually does not look like complete shit! :-)</p>
+<p>bye</p>
+<p>go to sleep now!</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        December 22, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day56/" class="link black dim">
         Day 56
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      small stuff, fxed some warnings, but also fixed annoying black tiles in terrain, that was weird&hellip; for some reason texture is drawn with alpha blend and it has zero alpha, but in fact it should not be drawn with alpha test in first place. Well, there is type passed (gos_Texture_Solid) when it is created, but.. well, it has alpha channel and was drawn with blending so, why should I set alpha channel to 0xFF manualy?
+      <p>small stuff, fxed some warnings, but also fixed annoying black tiles in terrain, that was weird&hellip; for some reason texture is drawn with alpha blend and it has zero alpha, but in fact it should not be drawn with alpha test in first place. Well, there is type passed (<code>gos_Texture_Solid</code>) when it is created, but.. well, it has alpha channel and was drawn with blending so, why should I set alpha channel to <code>0xFF</code> manualy? Well, I think I have to, though it is still strange why quads without detail are drawn with alpha blending enabled&hellip;</p>
+<p>Also while on it, I&rsquo;ve added handling of <code>gos_Texture_Detect</code> type (detecting if texture has something usefull in alpha channel and make it transparent or not)</p>
+<p>also added texture filter and address mode handling, which exposed ugly lines between chunks of terrain texture</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        December 17, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day55/" class="link black dim">
         Day 55
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      fixed issue with salvage airplane not being drawn.
-Apparently, it is same old issue when I changed signature of virtual function in base class and forgot to change it in one of the derived classes&hellip;.
-in this particular case it was getting node position by name in model. I changed it to const char* instead of just char* in one of the first changes to the code (even before I added code to git)
+      <p>fixed issue with salvage airplane not being drawn.</p>
+<p>Apparently, it is same old issue when I changed signature of virtual function in base class and forgot to change it in one of the derived classes&hellip;.</p>
+<p>in this particular case it was getting node position by name in model. I changed it to <code>const char*</code> instead of just <code>char*</code> in one of the first changes to the code (even before I added code to git)</p>
+<p>So, defaut implemetation was just returning <code>0,0,0</code> and it was used to get target position, so airplane just could not come on screen because <code>0,0,0</code> was somewhere far far away</p>
+<p>Also added very simple &ldquo;frame debugger&rdquo;, when I can scroll back and forth in draw calls and break on one which interests me. It already proved to be quite useful in investigating rendering loop</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        December 16, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day54/" class="link black dim">
         Day 54
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      After a long beak
-submitted some pending code
-was playing with my VS Code plugins (Cmake Tools, etc&hellip;), as a result found one buffer owerwrite issue in warrior.cpp SkillsTable thanks to clang
-trying to figure out why salvage airplane is not visible&hellip; in progress
-time to sleep
+      <p>After a long beak</p>
+<p>submitted some pending code</p>
+<p>was playing with my VS Code plugins (Cmake Tools, etc&hellip;), as a result found one buffer owerwrite issue in <code>warrior.cpp SkillsTable</code> thanks to <code>clang</code></p>
+<p>trying to figure out why salvage airplane is not visible&hellip; in progress</p>
+<p>time to sleep</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-    </section>
+    </aside>
+    <div align="center">
+    
 
 <ul class="pagination">
     
@@ -414,7 +499,9 @@ time to sleep
     
 </ul>
 
-</article>
+
+    </div>
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

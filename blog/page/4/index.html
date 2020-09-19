@@ -6,7 +6,7 @@
     
     <title>Mech Commander 2 HD  | Blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.63.1" />
+    <meta name="generator" content="Hugo 0.72.0" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -123,185 +123,310 @@
 
     <main class="pb7" role="main">
       
+
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"><p>This is pretty much a dump of what I&rsquo;ve been working on during making this port. It also contains some dev screenshots.</p>
-</section>
-    <section class="flex-ns flex-wrap justify-around mt5">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+      <p>This is pretty much a dump of what I&rsquo;ve been working on during making this port. It also contains some dev screenshots.</p>
+
+    </section>
+    
+    
+    <aside class="flex flex-column items-center justify-around mt5 ">
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        December 1, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day53/" class="link black dim">
         Day 53 &#43; image of the day
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      fixed a problem with texture that had id = 0 not being applied :-) it was a font texture (used at least for in-game text), so some text was not visible due to this reason
-Image of the day:
+      <p>fixed a problem with texture that had <code>id = 0</code> not being applied :-)
+it was a font texture (used at least for in-game text), so some text was not visible due to this reason</p>
+<p>Image of the day: <a href="/images/devblog/day53_2016-12-01-145456_1920x1080_scrot.png"><figure>
+    <img src="/images/devblog/day53_2016-12-01-145456_1920x1080_scrot.png"
+         alt="click to expand"/> 
+</figure>
+</a></p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 29, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day51/" class="link black dim">
         Day 51
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      was changing long to int32_t in ABL related files&hellip; well externs are evil! consider:
-1.cpp
-int myVar; 2.cpp
-extern long myVar; good luck looking for a bug&hellip;
-ABL uses lots of them!!!
-even if you think you&rsquo;ve correclty changed all longs to ints, there is such code as:
-long my_stack_var; memcpy(myVar, my_stack_var, sizeof(long)); // well this you may catch by searching for &quot;long&quot; // but consider this memcpy(myVar, my_stack_var, sizeof(my_stack_var));// :O I hope I did not leave such cases&hellip;.
+      <p>was changing <code>long</code> to <code>int32_t</code> in <code>ABL</code> related files&hellip; well <code>extern</code>s are evil!
+consider:</p>
+<p>1.cpp</p>
+<pre><code>int myVar;
+</code></pre><p>2.cpp</p>
+<pre><code>extern long myVar;
+</code></pre><p>good luck looking for a bug&hellip;</p>
+<p>ABL uses lots of them!!!</p>
+<p>even if you think you&rsquo;ve correclty changed all longs to ints, there is such code as:</p>
+<pre><code>long my_stack_var;
+memcpy(myVar, my_stack_var, sizeof(long)); // well this you may catch by searching for &quot;long&quot;
+// but consider this
+memcpy(myVar, my_stack_var, sizeof(my_stack_var));// :O
+</code></pre><p>I hope I did not leave such cases&hellip;.</p>
+<p>Also was changing(long -&gt; int) in all structures that are saved in order to surpport saves from 32bit systems</p>
+<p>Finally, fixed nasty bug when repair truck sometimes was not appearing. As I see, it is uninitialized variable <code>isOnGui</code> which prevented it from being drawn</p>
+<p>when it happened that it was false, repair truck tried to be drawn as alpha transparent oject, but in fact was not drawn because there was no branch that was drawing objects with just <code>MC2_DRAWALPHA</code> flag set.
+(see comments in commit for more explanation)</p>
+<p>Look like Windows version always initializes memory with <code>0xff</code> an so they did not have such a problem. Should I do the same? :-) just to repeat all their issues :-)</p>
+<p>no I&rsquo;ll expose all of them and fix them&hellip; maybe :-)</p>
+<p>Ok, will have a cup of tea and go to sleep, after all I have a birthday tomorrow!
+(that is because I am writing it on 28 though this blog records is for day earlier)</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 29, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day52/" class="link black dim">
         Day 52
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      fixed memory leak in gosAudio_CreateResource
-in training mission 5 &quot;terminationResult&quot; variable was screwed (see mission.cpp 667 - 676 lines)
-apparently guys had a strange sense of humor and added playing of win/lose tunes if terminationResult was not as one might expect to find out ABL issues, and apparently training mission 5 has them.
-I do not know if it had them before, or they we caused by my recent changes in abl code (long-&gt;int), I hope not.
+      <p>fixed memory leak in <code>gosAudio_CreateResource</code></p>
+<p>in training mission 5 <code>&quot;terminationResult&quot;</code> variable was screwed (see mission.cpp 667 - 676 lines)</p>
+<p>apparently guys had a strange sense of humor and added playing of win/lose tunes if <code>terminationResult</code> was not as one might expect to find out ABL issues, and apparently training mission 5 has them.</p>
+<p>I do not know if it had them before, or they we caused by my recent changes in <code>abl</code> code (<code>long-&gt;int</code>), I hope not. Will have to check tough</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 26, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day50/" class="link black dim">
         Day 50
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      finished initial draft sound implementation, there are some wav files which cannot be loaded neither by SDL nor by SDL_mixer, also noise sounds that repacked have to be extracted.
-made couple of small fixes like avoiding triggering assert() when dividing by a very small number, happened because currently frame time is faked by me as 16msec :-), and others
-even finished E3 mission :-) from .. maybe 10th try, because of anoying asserts and PAUSE()/STOP() triggerings.
+      <p>finished initial draft sound implementation, there are some <code>wav</code> files which cannot be loaded neither by <code>SDL</code> nor by <code>SDL_mixer</code>,
+also noise sounds that repacked have to be extracted.</p>
+<p>made couple of small fixes like avoiding triggering assert() when dividing by a very small number, happened because currently frame time is faked by me as 16msec :-), and others</p>
+<p>even finished E3 mission :-) from .. maybe 10th try, because of anoying asserts and PAUSE()/STOP() triggerings.
+some strange issue still remains with trying to render text which is NULL</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 25, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day49/" class="link black dim">
         Day 49
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      proceeded with sound, almost can play game with all sounds available, though still lack a lot of sound support stuff and resource loading could be smarter.
+      <p>proceeded with sound, almost can play game with all sounds available, though still lack a lot of sound support stuff and resource loading could be smarter.</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 23, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day48/" class="link black dim">
         Day 48
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      started to add sound support. looks like signed to unsinged conversion fails to work but mono/stereo and frequency conversion works, hmmm
-no screenshots in near future, I expect :-)
+      <p>started to add sound support. looks like signed to unsinged conversion fails to work but mono/stereo and frequency conversion works, hmmm</p>
+<p>no screenshots in near future, I expect :-)</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 19, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day47/" class="link black dim">
         Day 47
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      added conversion between rgba -&gt; bgra -&gt; rgba when locking and unlocking, because CPU code expects textures in BGRA, so I have correct colors now
-also fixed very interesting issue.
-fors code was like this:
-unsigned long s_textureHandle[] = {-1, -1, -1, -1}; clang was complaining that there is conversion or something like this, so I changed this to:
-unsigned long s_textureHandle[] = {-1u, -1u, -1u, -1u}; and then today I&rsquo;ve got a crash because of this conditional:
+      <p>added conversion between <code>rgba -&gt; bgra -&gt; rgba</code> when locking and unlocking, because CPU code expects textures in BGRA, so I have correct colors now</p>
+<p>also fixed very interesting issue.</p>
+<p>fors code was like this:</p>
+<pre><code>unsigned long s_textureHandle[] = {-1, -1, -1, -1};
+</code></pre><p>clang was complaining that there is conversion or something like this, so I changed this to:</p>
+<pre><code>unsigned long s_textureHandle[] = {-1u, -1u, -1u, -1u};
+</code></pre><p>and then today I&rsquo;ve got a crash because of this conditional:</p>
+<pre><code>if(s_textureHandle[i] == -1) {
+}
+</code></pre><p>It was giving <code>false</code>, what happened in this case is:</p>
+<ol>
+<li><code>-1u</code> got converted into <code>0xffffffff</code>, and promoted to <code>long</code>.</li>
+<li>inside condition expression: -1 got promoted to <code>unsigned long</code> with sign extension, so first: it became -1 long, and then converted to unsigned 0xffffffffffffffff, and suddenly it all broke</li>
+</ol>
+<p>before it worked, of course. because in construction of <code>s_textureHandle[]</code> -1 got converted to <code>0xffffffffffffffff</code> as well.</p>
+<p>phew, I have to be more carefull with those <code>longs</code></p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 19, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day46/" class="link black dim">
         Day 46
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      trying to figure out why some textures do not have nice blue background&hellip;. :-/ like ones in solo mission on single player option map.
-but in-game minimap has this nice background and windows version also has it
+      <p>trying to figure out why some textures do not have nice blue background&hellip;. :-/ like ones in solo mission on single player option map.</p>
+<p>but in-game minimap has this nice background and windows version also has it</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 14, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day45/" class="link black dim">
         Day 45 &#43; image of the day
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      implemented proper (well.. I mean, it works sometimes) texutre lock/unlock
-figured out why mouse cursor is not drawn sometimes (mc2 mouse is processed in a separate thread. Something like this variable was set or not set depending on some strange reasons)
-we shoulld always assume it is not in a separate thread and that is it!
-spent whole evening tracking strange issue when mechs would not go where I told them&hellip; but would do it if I said to shoot, apparently I had 2 errors in timeGetTime()
+      <p>implemented proper (well.. I mean, it works sometimes) texutre lock/unlock</p>
+<p>figured out why mouse cursor is not drawn sometimes (mc2 mouse is processed in a separate thread. Something like <code>this</code> variable was set or not set depending on some strange reasons)</p>
+<p>we shoulld always assume it is not in a separate thread and that is it!</p>
+<p>spent whole evening tracking strange issue when mechs would not go where I told them&hellip; but would do it if I said to shoot, apparently I had 2 errors in <code>timeGetTime()</code></p>
+<p>and overall I was wrong by <code>1e3</code> in 2 places :-), thanks gdb and watchpoints, now camera also works better and I even finished a mission, though, it crashed on a mission end screen :-)</p>
+<p>so, quite a productive evening today.
+thank you all :P
+bye!</p>
+<p>Image of the day: <a href="/images/devblog/day45_2016-11-14-015725_3841x1201_scrot.png"><figure>
+    <img src="/images/devblog/day45_2016-11-14-015725_3841x1201_scrot.png"
+         alt="click to expand"/> 
+</figure>
+</a></p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        November 12, 2016
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day44/" class="link black dim">
         Day 44 &#43; image of the day
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      continue with various fixes.
-one that was quite scary is memery block filling with NANs. when first memory was cast to long* but number of iterations was divided only by 4, ..who cares about 64bit long in 2001
-finally I can play a game now! though mech would not move where I tell them, only start moving and then stop again. It is interesting, that they move if they need to come closer to shoot (when I aim cursor at the target and click)
+      <p>continue with various fixes.</p>
+<p>one that was quite scary is memery block filling with NANs. when first memory was cast to <code>long*</code> but number of iterations was divided only by 4, ..who cares about 64bit <code>long</code> in 2001</p>
+<p>finally I can play a game now! though mech would not move where I tell them, only start moving and then stop again.
+It is interesting, that they move if they need to come closer to shoot (when I aim cursor at the target and click)</p>
+<p>Image of the day: <a href="/images/devblog/day44_2016-11-12-183952_3841x1201_scrot.png"><figure>
+    <img src="/images/devblog/day44_2016-11-12-183952_3841x1201_scrot.png"
+         alt="click to expand"/> 
+</figure>
+</a></p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-    </section>
+    </aside>
+    <div align="center">
+    
 
 <ul class="pagination">
     
@@ -420,7 +545,9 @@ finally I can play a game now! though mech would not move where I tell them, onl
     
 </ul>
 
-</article>
+
+    </div>
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

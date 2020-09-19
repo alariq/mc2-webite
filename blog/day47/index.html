@@ -6,7 +6,7 @@
     
     <title>Mech Commander 2 HD  | Day 47</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.63.1" />
+    <meta name="generator" content="Hugo 0.72.0" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -60,8 +60,6 @@ unsigned long s_textureHandle[] = {-1u, -1u, -1u, -1u}; and then today I&rsquo;v
   <body class="ma0 avenir bg-near-white">
 
     
-   
-  
 
   <header>
     <div class="bg-black">
@@ -132,25 +130,20 @@ unsigned long s_textureHandle[] = {-1u, -1u, -1u, -1u}; and then today I&rsquo;v
   </header>
 
 
-
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        BLOG
-      </p>
-      <h1 class="f1 athelas mb1">Day 47</h1>
-      
-      <time class="f6 mv4 dib tracked" datetime="2016-11-19T01:02:15Z">November 19, 2016</time>
-      
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>added conversion between <code>rgba -&gt; bgra -&gt; rgba</code> when locking and unlocking, because CPU code expects textures in BGRA, so I have correct colors now</p>
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          BLOG
+        </p>
+        <h1 class="f1">
+          Day 47
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>added conversion between <code>rgba -&gt; bgra -&gt; rgba</code> when locking and unlocking, because CPU code expects textures in BGRA, so I have correct colors now</p>
 <p>also fixed very interesting issue.</p>
 <p>fors code was like this:</p>
 <pre><code>unsigned long s_textureHandle[] = {-1, -1, -1, -1};
@@ -166,23 +159,10 @@ unsigned long s_textureHandle[] = {-1u, -1u, -1u, -1u}; and then today I&rsquo;v
 </ol>
 <p>before it worked, of course. because in construction of <code>s_textureHandle[]</code> -1 got converted to <code>0xffffffffffffffff</code> as well.</p>
 <p>phew, I have to be more carefull with those <code>longs</code></p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6">
-      
-      
+
       </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
+    </article>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

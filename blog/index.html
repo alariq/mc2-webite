@@ -6,7 +6,7 @@
     
     <title>Mech Commander 2 HD  | Blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.63.1" />
+    <meta name="generator" content="Hugo 0.72.0" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -123,173 +123,260 @@
 
     <main class="pb7" role="main">
       
+
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"><p>This is pretty much a dump of what I&rsquo;ve been working on during making this port. It also contains some dev screenshots.</p>
-</section>
-    <section class="flex-ns flex-wrap justify-around mt5">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+      <p>This is pretty much a dump of what I&rsquo;ve been working on during making this port. It also contains some dev screenshots.</p>
+
+    </section>
+    
+    
+    <aside class="flex flex-column items-center justify-around mt5 ">
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 12, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day83/" class="link black dim">
         Day 83 &#43; image of the day
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      !!!!!yay found and fixed bug.. no 2 bugs at once! one was causing other in a very weird way.
-When we have mech with blown hand(s) in engine it is implemented as mech without handes + mech with only left hand (no body) and right hand (also no body)
-The thing is that once we do not have body updateGeomery was not called and texture handle for hand(s) was not updated, but in render function it was updated.
+      <p>!!!!!yay found and fixed bug.. no 2 bugs at once! one was causing other in a very weird way.</p>
+<p>When we have mech with blown hand(s) in engine it is implemented as mech without handes + mech with only left hand (no body) and right hand (also no body)</p>
+<p>The thing is that once we do not have body <code>updateGeomery</code> was not called and texture handle for hand(s) was not updated, but in render function it was updated. So, during <code>update()</code>, <code>addTriangle</code> was called with one <code>nodeId</code>, but in <code>render()</code> it tried to add vertices to another <code>nodeId</code>, and of course could not find it, leading to &ldquo;Flags do not match either set of vertex Data&rdquo; message.</p>
+<p>I noticed this during early stages of porting, but thought it is something innocent, though, I did not relate it with issue when some polygons magically disappeared in live mechs of the same type (polys were popping in and out depending on view angle which was even more strange). Apparently one issue was causing another, due to broken vertex lists.</p>
+<p>But now it is fixed, and I can sleep well!</p>
+<p>but first drink some tea!</p>
+<p>Image of the day: <a href="/images/devblog/day83_2017-03-12-010816_3841x1201_scrot.png"><figure>
+    <img src="/images/devblog/day83_2017-03-12-010816_3841x1201_scrot.png"
+         alt="click to expand"/> 
+</figure>
+</a></p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 10, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day82/" class="link black dim">
         Day 82
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      see day81
+      <p>see day81</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 9, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day81/" class="link black dim">
         Day 81
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      see day80 looks like I found all of them (I mean it just seems to kinda work&hellip;)
+      <p>see day80
+looks like I found all of them (I mean it just seems to kinda work&hellip;)</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 8, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day80/" class="link black dim">
         Day 80
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      see day79 :-)
+      <p>see day79 :-)</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 8, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day79/" class="link black dim">
         Day 79
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      trying to find (and then fix :-) ) problem with quick save/load when repair track does not want to heal characters, assume something related to uninitialized variables/32&lt;-&gt;64 bit support. exploiting valgrind
+      <p>trying to find (and then fix :-) ) problem with quick save/load when repair track does not want to heal characters, assume something related to uninitialized variables/32&lt;-&gt;64 bit support. exploiting valgrind</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 6, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day78/" class="link black dim">
         Day 78
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Looks like I finally found what was causing areaTriggerAdd crash, - ABL did not realy work with 64bit.
-Now it does, I hope :-)
-Though, found whole bunch of 32&lt;-&gt;64 bit problems in warrior.h, some mechs would not go far, esp. repair truck, then, some stats were weird in info (i) screen. Found out that some data types were int[] but memcpy was done with sizef(long) :-/ I thought, I was attentive when changed those arrays to int.
+      <p>Looks like I finally found what was causing <code>areaTriggerAdd</code> crash, - <code>ABL</code> did not realy work with 64bit.</p>
+<p>Now it does, I hope :-)</p>
+<p>Though, found whole bunch of 32&lt;-&gt;64 bit problems in <code>warrior.h</code>, some mechs would not go far, esp. repair truck, then, some stats were weird in info (i) screen. Found out that some data types were <code>int[]</code> but memcpy was done with <code>sizef(long)</code> :-/ I thought, I was attentive when changed those arrays to <code>int</code>.</p>
+<p>So have to 1st) ensure no data overwrite occures 2nd) actually change all save/load data to not contain 64bit values in order to be compatible with 32bit saves.</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 5, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day77/" class="link black dim">
         Day 77
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      played with valgrind, fixed some memory leaks.
-also, finally, added refereces to fonts, so that we do not load new font every time it is needed, but use loaded if present
-found bug in ABL scripting - related to 64 bit, well yes not a bug just some work has to be done to fully support 64 bit, do not even understand how I passed 11 missions with broken ABL!
+      <p>played with valgrind, fixed some memory leaks.</p>
+<p>also, finally, added refereces to fonts, so that we do not load new font every time it is needed, but use loaded if present</p>
+<p>found bug in <code>ABL</code> scripting - related to 64 bit, well yes not a bug just some work has to be done to fully support 64 bit, do not even understand how I passed 11 missions with broken <code>ABL</code>!</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 5, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day76/" class="link black dim">
         Day 76
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      played with callgrind, nice stuff, fixed small cache issue (moved 2 lines of code :-))
+      <p>played with callgrind, nice stuff, fixed small cache issue (moved 2 lines of code :-))</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        February 26, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day75/" class="link black dim">
         Day 75
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      checked game code with clang analyzer. also code compiles with clang-5.0
-unfortunately, analyzer is not that good as I thought&hellip; or maybe I ned to add more options?
-still did not test fullscreen more even though it is checked in along with all other window changes
-clang found bug where pointer was used to compare with numbers though it should be dereferenced
-game still can occasionally crash in release mode (maybe in debug as well, but I am playing in release), though I cannot look for a bug which cannot be reproduced.
+      <p>checked game code with clang analyzer. also code compiles with clang-5.0</p>
+<p>unfortunately, analyzer is not that good as I thought&hellip; or maybe I ned to add more options?</p>
+<p>still did not test fullscreen more even though it is checked in along with all other window changes</p>
+<p>clang found bug where pointer was used to compare with numbers though it should be dereferenced</p>
+<p>game still can occasionally crash in release mode (maybe in debug as well, but I am playing in release), though I cannot look for a bug which cannot be reproduced.</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Blog</span>
+        
+        <div class="relative w-60-l w-90-ns mb4 bg-white">
+          
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        February 26, 2017
+      </div>
+    
     <h1 class="f3 near-black">
       <a href="/mc2-website/blog/day74/" class="link black dim">
         Day 74
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      merged Windows changes, so Linux can compile too
-fixed nasty array-out-of-bounds bug, see genactor.cpp
+      <p>merged Windows changes, so Linux can compile too</p>
+<p>fixed nasty array-out-of-bounds bug, see genactor.cpp</p>
+
     </div>
   </div>
-</div>
-</div>
+
+        </div>
       
-    </section>
+    </aside>
+    <div align="center">
+    
 
 <ul class="pagination">
     
@@ -404,7 +491,9 @@ fixed nasty array-out-of-bounds bug, see genactor.cpp
     
 </ul>
 
-</article>
+
+    </div>
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

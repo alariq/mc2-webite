@@ -6,7 +6,7 @@
     
     <title>Mech Commander 2 HD  | Day 56</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.63.1" />
+    <meta name="generator" content="Hugo 0.72.0" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -48,8 +48,6 @@
   <body class="ma0 avenir bg-near-white">
 
     
-   
-  
 
   <header>
     <div class="bg-black">
@@ -120,44 +118,26 @@
   </header>
 
 
-
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        BLOG
-      </p>
-      <h1 class="f1 athelas mb1">Day 56</h1>
-      
-      <time class="f6 mv4 dib tracked" datetime="2016-12-22T01:12:20Z">December 22, 2016</time>
-      
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>small stuff, fxed some warnings, but also fixed annoying black tiles in terrain, that was weird&hellip; for some reason texture is drawn with alpha blend and it has zero alpha, but in fact it should not be drawn with alpha test in first place. Well, there is type passed (<code>gos_Texture_Solid</code>) when it is created, but.. well, it has alpha channel and was drawn with blending so, why should I set alpha channel to <code>0xFF</code> manualy? Well, I think I have to, though it is still strange why quads without detail are drawn with alpha blending enabled&hellip;</p>
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          BLOG
+        </p>
+        <h1 class="f1">
+          Day 56
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>small stuff, fxed some warnings, but also fixed annoying black tiles in terrain, that was weird&hellip; for some reason texture is drawn with alpha blend and it has zero alpha, but in fact it should not be drawn with alpha test in first place. Well, there is type passed (<code>gos_Texture_Solid</code>) when it is created, but.. well, it has alpha channel and was drawn with blending so, why should I set alpha channel to <code>0xFF</code> manualy? Well, I think I have to, though it is still strange why quads without detail are drawn with alpha blending enabled&hellip;</p>
 <p>Also while on it, I&rsquo;ve added handling of <code>gos_Texture_Detect</code> type (detecting if texture has something usefull in alpha channel and make it transparent or not)</p>
 <p>also added texture filter and address mode handling, which exposed ugly lines between chunks of terrain texture</p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6">
-      
-      
+
       </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
+    </article>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

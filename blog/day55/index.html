@@ -6,7 +6,7 @@
     
     <title>Mech Commander 2 HD  | Day 55</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.63.1" />
+    <meta name="generator" content="Hugo 0.72.0" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -54,8 +54,6 @@ in this particular case it was getting node position by name in model. I changed
   <body class="ma0 avenir bg-near-white">
 
     
-   
-  
 
   <header>
     <div class="bg-black">
@@ -126,46 +124,28 @@ in this particular case it was getting node position by name in model. I changed
   </header>
 
 
-
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
-    <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
-          
-        BLOG
-      </p>
-      <h1 class="f1 athelas mb1">Day 55</h1>
-      
-      <time class="f6 mv4 dib tracked" datetime="2016-12-17T00:57:03Z">December 17, 2016</time>
-      
-      
-    </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>fixed issue with salvage airplane not being drawn.</p>
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          BLOG
+        </p>
+        <h1 class="f1">
+          Day 55
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>fixed issue with salvage airplane not being drawn.</p>
 <p>Apparently, it is same old issue when I changed signature of virtual function in base class and forgot to change it in one of the derived classes&hellip;.</p>
 <p>in this particular case it was getting node position by name in model. I changed it to <code>const char*</code> instead of just <code>char*</code> in one of the first changes to the code (even before I added code to git)</p>
 <p>So, defaut implemetation was just returning <code>0,0,0</code> and it was used to get target position, so airplane just could not come on screen because <code>0,0,0</code> was somewhere far far away</p>
 <p>Also added very simple &ldquo;frame debugger&rdquo;, when I can scroll back and forth in draw calls and break on one which interests me. It already proved to be quite useful in investigating rendering loop</p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6">
-      
-      
+
       </div>
-    </section>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
+    </article>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

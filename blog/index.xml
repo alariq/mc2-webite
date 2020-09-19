@@ -202,7 +202,7 @@ updated MakeLists.txt to search for SDL package instead of SDL library, also add
       
       <guid>https://alariq.github.io/mc2-website/blog/day66/</guid>
       <description>rewrote a bit how resolutions are changed, so that all supported resolutions can be selected, though not all UI may work correctly
-Image of the day:</description>
+Image of the day:    </description>
     </item>
     
     <item>
@@ -341,7 +341,7 @@ time to sleep</description>
       
       <guid>https://alariq.github.io/mc2-website/blog/day53/</guid>
       <description>fixed a problem with texture that had id = 0 not being applied :-) it was a font texture (used at least for in-game text), so some text was not visible due to this reason
-Image of the day:</description>
+Image of the day:    </description>
     </item>
     
     <item>
@@ -559,7 +559,7 @@ will submit code tomorrow</description>
       <guid>https://alariq.github.io/mc2-website/blog/day34/</guid>
       <description>added font color support
 got some nice fonts, which does not look like s**t. (Mecha@16pt, emulogic@8pt), have to remember those, to not redistribute them acidentally without following authors requirements
-Image of the day:</description>
+Image of the day:    </description>
     </item>
     
     <item>
@@ -571,7 +571,7 @@ Image of the day:</description>
       <description>more run-time text fixes, some client code fixes (numlines identification game code was just broken, it worked just because gos_GetStringLength were taking into account region)
 added word wrap for rendering
 big todo: rewrite this client code: aFont::height
-Image of the day:</description>
+Image of the day:    </description>
     </item>
     
     <item>
@@ -583,7 +583,7 @@ Image of the day:</description>
       <description>added VERY SIMPLE AND UGLY (tm) text rendering.. and it is also slow and incorrect, but hey! you can see text!
 also fixed memeory corruption, phew&amp;hellip;.
 need to think about resource resuage, same textures/fonts are loaded several times alsways creating new resource, this is not good!
-Image of the day:</description>
+Image of the day:    </description>
     </item>
     
     <item>
@@ -629,7 +629,7 @@ Image of the day:</description>
       
       <guid>https://alariq.github.io/mc2-website/blog/day27/</guid>
       <description>Added very basic texture support, now I see some textures,&amp;hellip; and have some crash on exit which I need to investigate now :-), I mean later&amp;hellip; :-)
-Image of the day:</description>
+Image of the day:    </description>
     </item>
     
     <item>
@@ -641,7 +641,7 @@ Image of the day:</description>
       <description>got first something on a screen! (see screenshot!)
 basically added quads/lines/points/tris drawing (no textures yet, though) and some render states support (blending, depth test/write etc&amp;hellip;)
 and also wrote first shader
-Image of the day:</description>
+Image of the day:    </description>
     </item>
     
     <item>
